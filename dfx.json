@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "dbankFirst_backend": {
+      "main": "src/dbankFirst_backend/main.mo",
+      "type": "motoko"
+    },
+    "dbankFirst_frontend": {
+      "dependencies": [
+        "dbankFirst_backend"
+      ],
+      "source": [
+        "src/dbankFirst_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "dbankFirst_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
