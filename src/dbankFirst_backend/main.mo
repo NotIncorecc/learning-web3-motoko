@@ -7,15 +7,13 @@ actor DBank {
   let id = 1243258409;// it is immutable, cannot be changed
   Debug.print(debug_show(id));
 
-  func topUp(){//private function(only accessible to the DBank actor)
-    currentValue += 1;
-    Debug.print(debug_show(currentValue))
-  };
-
   public func pTopUp() {//public function, can be run from the terminal with `dfx canister call dbankFirst_backend pTopUp`
     currentValue += 1;
     Debug.print(debug_show(currentValue))
   }
 
-  //topup();
+  /*for candid ui interface type `dfx canister id __Candid_UI`
+  then go to http://127.0.0.1:4943/?canisterId=<the id you found>
+  Enter the canister id you found from the command `dfx canister id dbankFirst_backend`
+  */
 }
