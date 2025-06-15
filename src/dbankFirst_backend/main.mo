@@ -1,4 +1,5 @@
 import Debug "mo:base/Debug";
+import Int "mo:base/Int";
 
 actor DBank {
   var currentValue = 300;
@@ -19,7 +20,11 @@ actor DBank {
   //orthogonal persistance: everytime `dfx deploy` runs, all the variables get wiped off 
 
   public func withdraw(amount: Nat){
+    if ((currentValue - amount) : Int >= 0){
     currentValue -= amount;
     Debug.print(debug_show(currentValue));
+    } else {
+      Debug.print(debug_show("not enough value to withdraw"));
+    }
   }
 }
